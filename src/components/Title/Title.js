@@ -5,14 +5,11 @@ function Title({user,onClick}) {
     const setBlue = () => {
         setBg('blue')
     };
-    const startTimeout = () => {
-        setTimeout(() => {
-            setBg("blue")
-        },2000)
-    };
     const handler = () => {
-        onClick(user);
-        startTimeout()
+        onClick.show(user);
+        onClick.to(setTimeout(() => {
+            setBg("blue")
+        },2000))
     };
     return (
         <div style={{backgroundColor: bg, marginBottom: "3.5rem"}}
